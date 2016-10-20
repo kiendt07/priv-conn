@@ -1,0 +1,17 @@
+<div class="form-login">
+  <h4>Sign in</h4>
+  <!-- POST to login_path -->
+  <%= form_tag login_path do %>
+    <%= text_field_tag :email, params[:email], class: 'form-control input-sm chat-input', placeholder: 'email' %>
+    <br>
+    <%= password_field_tag :password, nil, class: 'form-control input-sm chat-input', placeholder: 'password' %>
+    <br>
+
+    <div class="wrapper">
+      <span class="group-btn">
+          <%= submit_tag "Log In", class: 'btn btn-primary'%>
+      </span>
+    </div>
+  <% end %>
+
+</div>

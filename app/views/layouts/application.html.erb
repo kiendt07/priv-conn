@@ -9,6 +9,17 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= flash_messages %>
+    <%= render 'shared/navbar' %>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-2 col-sm-2 side-pane">
+          Friend List
+        </div>
+        <div class="col-md-10 col-sm-10 content">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
