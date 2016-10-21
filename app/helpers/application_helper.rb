@@ -1,5 +1,4 @@
 module ApplicationHelper
-  helper_method :current_user
   def bootstrap_class_for flash_type
     { success: 'alert-success', error: 'alert-danger', notice: 'alert-warning'}[flash_type.to_sym]
   end
@@ -10,12 +9,5 @@ module ApplicationHelper
         content_tag(:button, 'x'.html_safe, class: 'close', data: {dismiss: 'alert'}) + message
       end
     end.join.html_safe
-  end
-
-  def current_user
-    return @current_user if @current_user
-    if session[:user_id]
-      @current_user = User.find session[:user_id]
-    end
   end
 end

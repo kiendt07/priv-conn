@@ -1,0 +1,31 @@
+<div class="modal fade" id="newConnectionModal" tabindex="-1" role="dialog" aria-labelledby="New Connection" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+
+      <!-- Form for new Connection -->
+      <div class="modal-body">
+        <%= form_for @new_connection do |f| %>
+          <%= f.label :recipient %>
+          <%= f.collection_select(:recipient_id, User.all, :id, :name) %>
+
+          <!-- Nested form for connection.initial -->
+          <%= f.fields_for :initial do |message| %>
+            <%= message.label :content %>
+            <%= message.text_field :content %>
+          <% end %>
+        <% end %>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="submit" form="new_connection" class="btn btn-primary">Send</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

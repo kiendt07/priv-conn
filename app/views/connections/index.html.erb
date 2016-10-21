@@ -1,0 +1,22 @@
+<div class="nav-in-out">
+  <ul class="nav nav-pills">
+    <li class="nav-item">
+      <%= link_to 'In', connections_path(direction: 'in'),
+        class: "nav-link #{'active' if params[:direction] == 'in'}" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'Out', connections_path(direction: 'out'),
+        class: "nav-link #{'active' if params[:direction] == 'out'}" %>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="modal" data-target="#newConnectionModal">Create</a>
+      <%= render 'modal' %>
+    </li>
+  </ul>
+</div>
+
+<div class="messages">
+  <% @connections.each do |connection| %>
+    <%= render partial: 'shared/message', locals: { connection: connection } %>
+  <% end %>
+</div>

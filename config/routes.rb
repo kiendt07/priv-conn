@@ -1,11 +1,7 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
-  get 'sessions/create'
-
-  root 'users#index'
-  # Sign up
+  root 'users#new'
   resources :users
+  resources :connections, only: [:index, :new, :create, :destroy]
 
   # Log in
   get 'login' => 'sessions#new'

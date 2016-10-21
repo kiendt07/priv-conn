@@ -3,9 +3,13 @@ class ApplicationController < ActionController::Base
 
   protected
 
-  def require_user!
-    unless current_user
-      redirect_to login_path, flash: { error: 'Please log in first' }
-    end
+  def logged_in?
+    !session[:user_id].nil?
+  end
+
+  def current_user
+    # If not logged in, return nill
+    return nil unless logged_in?
+    @current_user ||= User.find session[:user_id]
   end
 end
