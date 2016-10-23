@@ -1,10 +1,10 @@
 # Homework 2 - *Name of App*
 
-**Name of your app** is a Ruby on Rails blog application that allows users to send messages to each other that can only be read once.
+**priv_conn** is a Ruby on Rails blog application that allows users to send messages to each other that can only be read once.
 
-Submitted by: **Your Name Here**
+Submitted by: **Kien Do**
 
-Time spent: **X** hours
+Time spent: **15** hours
 
 URL: **Insert your Heroku URL here**
 
@@ -13,15 +13,15 @@ URL: **Insert your Heroku URL here**
 The following **required** functionality is complete:
 
 
-* [ ] User can sign up by providing their email, password, and name.
-* [ ] User can login using an email and password.
-* [ ] After logging in, the user is taken to a page that has a list of incoming messages, sorted in descending chronological order (newest messages at top), a "new message" link, an "add friends" link, and a "sent messages" link.
-* [ ] Unread messages should be **bold** or something similar in the list of messages.
-* [ ] Clicking the "add friends" link takes the user to a page with all users listed, with a link to "add user to friends list".
-* [ ] Clicking on "new message" takes the user to a page where they can write a new mesasge. The recipient field should be a dropdown, where the options are names from the user's friends.
-* [ ] Clicking on "sent messages" takes the user to a page listing messages they have sent. Each message should display at what time it was read by the recipient, or "unread". The user cannot read the contents of the messages.
+* [x] User can sign up by providing their email, password, and name.
+* [x] User can login using an email and password.
+* [x] After logging in, the user is taken to a page that has a list of incoming messages, sorted in descending chronological order (newest messages at top), a "new message" link, an "add friends" link, and a "sent messages" link.
+* [x] Unread messages should be **bold** or something similar in the list of messages.
+* [x] Clicking the "add friends" link takes the user to a page with all users listed, with a link to "add user to friends list".
+* [x] Clicking on "new message" takes the user to a page where they can write a new mesasge. The recipient field should be a dropdown, where the options are names from the user's friends.
+* [x] Clicking on "sent messages" takes the user to a page listing messages they have sent. Each message should display at what time it was read by the recipient, or "unread". The user cannot read the contents of the messages.
 * [ ] User can read a message's content only once. Once the message has been read, the user will see a page indicating the message has already been read.
-* [ ] User can only read messages where they are the recipient.
+* [x] User can only read messages where they are the recipient.
 
 The following **optional** functionality is complete:
 
@@ -37,14 +37,15 @@ The following **optional** functionality is complete:
 * [ ] User can send a message to the email address of a non-registered user. The recipient will receive an email with a link to sign up for the service, and after creating an account, will be able to view the sent message.
 
 The following **additional** features are implemented:
+A connection has an initial message and a reply message. Sender create the connection to connect to the recipient.
 
-- [ ] (List anything else that you can get done to improve the app functionality!)
+* [ ] I'm working on anonymous connection, that is you can't see who sent you the message.
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![Video Walkthrough](relative-path-to-your-gif-file-on-github-or-absolute-path-to-file-on-imgur-or-youtube)
+![Video Walkthrough](http://i.imgur.com/xHPvRdn.gif)
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
