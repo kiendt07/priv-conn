@@ -37,7 +37,7 @@ The following **optional** functionality is complete:
 * [ ] User can send a message to the email address of a non-registered user. The recipient will receive an email with a link to sign up for the service, and after creating an account, will be able to view the sent message.
 
 The following **additional** features are implemented:
-A connection has an initial message and a reply message. Sender create the connection to connect to the recipient.
+**A connection has an initial message and a reply message. Sender create the connection to connect to the recipient.**
 
 * [ ] I'm working on anonymous connection, that is you can't see who sent you the message.
 
