@@ -6,7 +6,8 @@ Submitted by: **Kien Do**
 
 Time spent: **15** hours
 
-URL: **Insert your Heroku URL here**
+URL: **https://priv-conn.herokuapp.com**
+Login with email: harley@gmail.com, password: 123456
 
 ## User Stories
 
