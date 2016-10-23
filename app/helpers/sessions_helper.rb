@@ -5,7 +5,7 @@ module SessionsHelper
 
   def current_user
     # If not logged in, return nill
-    return nil unless logged_in_user?
+    return nil unless logged_in?
     @current_user ||= User.find session[:user_id]
   end
 

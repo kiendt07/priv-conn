@@ -1,0 +1,49 @@
+<div class="col-md-6">
+
+    <div class="box">
+      <a class="pure" href="<%= connection_path(connection) %>">
+        <div class="card-block title  <%= connection.reply.nil? ? 'not-reply' : 'replied' %> ">
+
+            <h4 class="card-title">
+              <small>from</small> <%= connection.sender == current_user ? 'me' : connection.sender.name %>
+              <br>
+              <a class="pure" href="<%= user_connections_path(connection.recipient) %>">
+                <small>to</small> <%= connection.recipient == current_user ? 'me' : connection.recipient.name %>
+              </a>
+            </h4>
+            <h6 class="card-subtitle"><%= distance_of_time_in_words(connection.initial.created_at, Time.now) %></h6>
+            <hr>
+
+        </div>
+      </a>
+
+
+      <div class="card-block">
+        <%= form_for connection do |f| %>
+          <div class="row message-row">
+            <p class="message <%= connection.sender == current_user ? 'from-me' : 'to-me' %>">
+              <%= connection.initial.content %>
+            </p>
+          </div>
+
+          <div class="row message-row">
+              <% if connection.reply.nil? %>
+                <% if connection.recipient == current_user %>
+                  <%= f.fields_for :reply do |reply| %>
+                    <%= reply.text_field :content, placeholder: 'Type to reply...', class: 'form-control message' %>
+                  <% end %>
+                  <%= f.submit 'Send', class: 'btn btn-primary send' %>
+                <% else %>
+
+                <% end %>
+              <% else %>
+                <p class="message <%= connection.sender == current_user ? 'to-me' : 'from-me' %>">
+                  <%= connection.reply.content%>
+                </p>
+              <% end %>
+          </div>
+        <% end %>
+      </div>
+
+    </div>
+</div>

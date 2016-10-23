@@ -1,0 +1,15 @@
+<div class="container">
+  <% @friends = current_user.friends %>
+  <div class="friendlist" style="text-align: center">
+    <h4 style="padding-top: 1em; padding-bottom: 1em" class="list-title">
+      Friend list
+    </h4>
+    <div class="list-content">
+      <% @friends.each do |friend| %>
+        <div class="row message-row text-center">
+          <%= link_to friend.name, user_connections_path(friend) %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

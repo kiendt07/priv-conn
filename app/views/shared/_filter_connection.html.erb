@@ -1,0 +1,25 @@
+<div class="nav-in-out">
+  <ul class="nav nav-pills">
+    <li class="nav-item nav-link nav-title" style="color: #95a5a6">
+      <%= @title %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'all', connections_path,
+        class: "pure nav-link #{'active' if current_page?(connections_path)}" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'in', in_connections_path,
+        class: "pure nav-link #{'active' if current_page?(in_connections_path)}" %>
+    </li>
+    <li class="nav-item">
+      <%= link_to 'out', out_connections_path,
+        class: "pure nav-link #{'active' if current_page?(out_connections_path)}" %>
+    </li>
+    <% if params[:user_id] %>
+      <li class="nav-item">
+        <%= link_to "create connection", new_user_connection_path(@user),
+          class: "pure nav-link", style: "color: #f1c40f" %>
+      </li>
+    <% end %>
+  </ul>
+</div>

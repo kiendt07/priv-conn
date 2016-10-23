@@ -1,0 +1,5 @@
+<div class="messages">
+  <% @connections.each do |connection| %>
+    <%= render partial: 'shared/connection', locals: { connection: connection } %>
+  <% end %>
+</div>

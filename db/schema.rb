@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161020143938) do
+ActiveRecord::Schema.define(version: 20161023075137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,19 +18,25 @@ ActiveRecord::Schema.define(version: 20161020143938) do
   create_table "connections", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
+    t.integer  "initial_id"
+    t.integer  "reply_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.index ["recipient_id"], name: "index_connections_on_recipient_id", using: :btree
     t.index ["sender_id"], name: "index_connections_on_sender_id", using: :btree
   end
 
+  create_table "friendships", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "friend_id"
+    t.index ["user_id"], name: "index_friendships_on_user_id", using: :btree
+  end
+
   create_table "messages", force: :cascade do |t|
-    t.integer  "connection_id"
     t.string   "content"
-    t.boolean  "is_read"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["connection_id"], name: "index_messages_on_connection_id", using: :btree
+    t.datetime "read_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

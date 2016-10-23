@@ -1,0 +1,23 @@
+<div class="container">
+  <h3>List of users</h3>
+  <table class="table table-inverse">
+    <thead>
+      <tr>
+        <th style="width: 80%">Name</th>
+        <th style="width: 20%"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.name %></td>
+          <td>
+            <%= link_to 'Add friend', friendships_path(friend_id: user.id), method: 'post' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+
+  </table>
+</div>

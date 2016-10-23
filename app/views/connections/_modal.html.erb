@@ -10,7 +10,8 @@
 
       <!-- Form for new Connection -->
       <div class="modal-body">
-        <%= form_for @new_connection do |f| %>
+        <%= form_for(@new_connection, remote: true) do |f| %>
+          <%= f.hidden_field :sender_id, value: @new_connection.sender.id %>
           <%= f.label :recipient %>
           <%= f.collection_select(:recipient_id, User.all, :id, :name) %>
 
